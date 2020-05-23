@@ -25,7 +25,7 @@ Kubernetes memory ve cpu usage'a gore hehangi bir kaynagin pressure yaratmasi du
 * ControllerManager: TaintNodesByCondition=true
 * Scheduler: TaintNodesByCondition=true
 
-### Kubernetes 1.18'de ise --enable-taint-manager sayesinde default hale gelmis durumda.
+<br>Notice:</br> Kubernetes 1.18'de ise --enable-taint-manager sayesinde default hale gelmis durumda.
 Pressure Olusturmak icin Worker Node uzerinde ornek bir yuk olusturacak ve memorypressure yaratacak pod uzerinden deployment yaptiginizda bir eviction yaratacak ve node ilgili duruma taintlenecek.
 
 ```sh
