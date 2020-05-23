@@ -42,3 +42,12 @@ Memory Pressure seklinde taintlendigini gormeniz icin asagidaki komutu calistira
 $ kubectl get nodes -o jsonpath='{range .items[*]}{@.metadata.name}{"\n"}{range @.status.conditions[*]}{@.type}={@.status}{"\n"}{end}{end}'|grep True
 
 ```
+
+## Kubectl Diff
+
+Uygulanmadan onceki manifest dosyasi ve akabinde cluster uzerinde konumlanmis olan obje arasindaki farklari gostermektedir.
+
+
+meld ya diff gibi linux uzerindeki programlar ile farklari bulmaktadir `KUBECTL_EXTERNAL_DIFF` degiskenine bakmaktadir.
+
+
