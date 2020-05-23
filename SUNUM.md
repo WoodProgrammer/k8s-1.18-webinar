@@ -50,4 +50,14 @@ Uygulanmadan onceki manifest dosyasi ve akabinde cluster uzerinde konumlanmis ol
 
 meld ya diff gibi linux uzerindeki programlar ile farklari bulmaktadir `KUBECTL_EXTERNAL_DIFF` degiskenine bakmaktadir.
 
+## IMMUTABLE SECRETS
+
+Kubernetes 1.18'de artik secretlara immutable eklentisi yaparak degistirilemez olmalarini sagliyoruz. Burada secretlarin takip edilemez sekilde update edilmesini, en update olmasi gerekmeyen degerler icin koruma altina almamizi sagliyor.
+
+Bu ozellik icinde kube-apiserver ve kube-controller-manager uzerinde su feature gateleri acmaniz gerekmektedir.
+
+```
+kube-apiserver.yaml:    - --feature-gates=ImmutableEphemeralVolumes=true
+kube-controller-manager.yaml:    - --feature-gates=ImmutableEphemeralVolumes=true
+```
 
