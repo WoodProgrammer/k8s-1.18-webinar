@@ -1,3 +1,5 @@
+# KUBERNETES 1.18 Yenilikler
+
 ## Dry-Run
 
 Server tarafinda objeleri onceden kontrol etmenizi saglar.
