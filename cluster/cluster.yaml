@@ -1,0 +1,6 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: v1.18.0
+apiServer:
+  extraArgs:
+    feature-gates: "DryRun=true"
