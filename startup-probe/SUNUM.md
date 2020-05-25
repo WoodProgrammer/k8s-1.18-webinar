@@ -7,3 +7,4 @@ Bu durumu asmak amaciyla startUpProbe adiyla yeni bir probe eklenerek livenessPr
 
 Eger ki uygulamalariniz : `initialDelaySeconds + failureThreshold × periodSeconds` daha uzun bir surede ayaga kalkiyorsa bu sekilde bir check ekleyebilirsiniz.
 
+TODO : app eklenecek details
