@@ -5,6 +5,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -13,3 +14,4 @@ spec:
         backend:
           serviceName: test
           servicePort: 80
+
