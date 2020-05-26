@@ -11,14 +11,7 @@ spec:
     args:
     - /bin/sh
     - -c
-    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
-    startupProbe:
-      exec:
-        command:
-        - cat
-        - /tmp/healthy
-      failureThreshold: 30
-      periodSeconds: 10
+    - sleep 100 && touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
     livenessProbe:
       exec:
         command:
@@ -26,10 +19,11 @@ spec:
         - /tmp/healthy
       initialDelaySeconds: 5
       periodSeconds: 5
-    readinessProbe:
-      exec:
-        command:
-        - cat
-        - /tmp/healthy
-      initialDelaySeconds: 5
-      periodSeconds: 5
+
+    #startupProbe:
+    #  exec:
+    #    command:
+    #    - cat
+    #    - /tmp/healthy
+    #  failureThreshold: 20
+    #  periodSeconds: 5
