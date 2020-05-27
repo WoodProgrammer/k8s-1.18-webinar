@@ -1,0 +1,13 @@
+root@simple:/# ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1568     4 ?        Ss   08:47   0:00 sleep 5000
+root         6  0.0  0.0  18504  3500 pts/0    Ss   08:48   0:00 /bin/bash
+root       467  0.0  0.0  34400  2904 pts/0    R+   08:54   0:00 ps aux
+
+
+root@simple:/# head -n 3 /proc/1/status
+Name: sleep
+Umask: 0022
+State: S (sleeping)
+
+
