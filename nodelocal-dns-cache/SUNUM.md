@@ -34,11 +34,11 @@ Cluster icerisindeki podlarin nodelocal cache'e direkt gidebilmesi ve coredns DN
 
 Kuruluma bagli olarak `/var/lib/kubelet` altinda config.yaml'daki ClusterDNS degerini 169'lu verdigimiz adrese cekebiliriz.
 
-``
+```
 apiVersion: kubelet.config.k8s.io/v1beta1
 ...
 ..
 ..
 clusterDNS:
 - 169.254.20.10
-``
+```
