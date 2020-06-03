@@ -16,13 +16,13 @@ Ancak burada direkt olarak bir helmchart ile kendisinin herseyi configure edildi
 
 Ilk olarak baktigimizda bazi parametreleri bizim vermemiz gerekiyor;
 
-```
+```sh
+KUBEDNS=$(kubectl get svc kube-dns -n kube-system -o jsonpath={.spec.clusterIP})
+wget https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/addons/dns/nodelocaldns/nodelocaldns.yaml -O nodelocaldns.yaml
 
-$ KUBEDNS=kubectl get svc kube-dns -n kube-system -o jsonpath={.spec.clusterIP}
-$ wget https://github.com/kubernetes/kubernetes/blob/master/cluster/addons/dns/nodelocaldns/nodelocaldns.yaml -O nodelocaldns.yaml
-$ sed -i -e "s/__PILLAR__DNS__DOMAIN__/${KUBE_DNS_NAME:-cluster.local}/g" nodelocaldns.yaml
-$ sed -i -e "s/__PILLAR__DNS__SERVER__/${KUBE_DNS_SERVER_IP:-$KUBEDNS}/g" nodelocaldns.yaml
-$ sed -i -e "s/__PILLAR__LOCAL__DNS__/${KUBE_LOCAL_DNS_IP:-169.254.20.10}/g" nodelocaldns.yaml
+sed -i -e "s/__PILLAR__DNS__DOMAIN__/${KUBE_DNS_NAME:-cluster.local}/g" nodelocaldns.yaml
+sed -i -e "s/__PILLAR__DNS__SERVER__/${KUBE_DNS_SERVER_IP:-$KUBEDNS}/g" nodelocaldns.yaml
+sed -i -e "s/__PILLAR__LOCAL__DNS__/${KUBE_LOCAL_DNS_IP:-169.254.20.10}/g" nodelocaldns.yaml
 
 ```
 
